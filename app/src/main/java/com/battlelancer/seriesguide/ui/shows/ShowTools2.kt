@@ -965,6 +965,15 @@ class ShowTools2(val showTools: ShowTools, val context: Context) {
     }
 
     /**
+     * Removes a list of shows by calling [removeShow] for each show.
+     */
+    fun removeShows(showIds: List<Long>) {
+        showIds.forEach { show ->
+            removeShow(show)
+        }
+    }
+
+    /**
      * Saves new favorite flag to the local database and, if signed in, up into the cloud as well.
      */
     fun storeIsFavorite(showId: Long, isFavorite: Boolean) {
