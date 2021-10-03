@@ -154,6 +154,8 @@
     <string name="hidden">Moved to hidden</string>
     <string name="unhidden">Show is visible again</string>
     <string name="action_shows_add">Add show</string>
+    <string name="action_shows_remove_all_visible" translatable="false">Remove currently displayed shows</string>
+    <string name="action_shows_remove_all_visible_confirm" translatable="false">Remove</string>
     <string name="action_shows_filter">Filter shows</string>
     <string name="empty_filter">Remove all filters</string>
     <string name="action_shows_filter_favorites">Favorites</string>
@@ -162,6 +164,7 @@
     <string name="action_shows_filter_hidden">Hidden</string>
     <string name="action_shows_make_all_visible">Make all hidden visible</string>
     <string name="description_make_all_visible_format">Make all hidden shows (%s) visible again?</string>
+    <string name="description_remove_all_visible_format" translatable="false">Do you really want to remove all currently displayed shows (%s)?</string>
     <string name="action_shows_sort">Sort shows</string>
     <string name="action_shows_sort_title">Title</string>
     <string name="action_shows_sort_latest_episode">Latest episode</string>
