@@ -38,6 +38,7 @@ class FilterShowsView @JvmOverloads constructor(
             filterListener?.onFilterUpdate(ShowFilter.allDisabled())
         }
         buttonMakeAllVisible.setOnClickListener { filterListener?.onMakeAllHiddenVisibleClick() }
+        buttonRemoveCurrentlyDisplayedShows.setOnClickListener { filterListener?.onRemoveCurrentlyDisplayedShowsClick() }
         buttonUpcomingRange.setOnClickListener { filterListener?.onConfigureUpcomingRangeClick() }
     }
 
@@ -57,6 +58,8 @@ class FilterShowsView @JvmOverloads constructor(
     internal lateinit var buttonUpcomingRange: ImageButton
     @BindView(R.id.button_shows_filter_all_visible)
     internal lateinit var buttonMakeAllVisible: Button
+    @BindView(R.id.button_shows_filter_remove_currently_displayed_shows)
+    internal lateinit var buttonRemoveCurrentlyDisplayedShows: Button
 
     private var filterListener: FilterListener? = null
 
@@ -120,6 +123,7 @@ class FilterShowsView @JvmOverloads constructor(
         fun onFilterUpdate(filter: ShowFilter)
         fun onConfigureUpcomingRangeClick()
         fun onMakeAllHiddenVisibleClick()
+        fun onRemoveCurrentlyDisplayedShowsClick()
     }
 
 }
