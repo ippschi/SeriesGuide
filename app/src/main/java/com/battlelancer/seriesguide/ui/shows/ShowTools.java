@@ -22,6 +22,7 @@ import com.battlelancer.seriesguide.util.tasks.AddShowToWatchlistTask;
 import com.battlelancer.seriesguide.util.tasks.RemoveShowFromWatchlistTask;
 import com.uwetrottmann.trakt5.entities.BaseShow;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import javax.inject.Inject;
 import timber.log.Timber;
@@ -89,6 +90,10 @@ public class ShowTools {
 
     public void removeShow(long showId) {
         showTools2.removeShow(showId);
+    }
+
+    public void removeShows(List<Long> showIds) {
+        showTools2.removeShows(showIds);
     }
 
     /**
