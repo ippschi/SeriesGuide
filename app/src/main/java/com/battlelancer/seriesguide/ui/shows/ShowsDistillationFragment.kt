@@ -27,6 +27,7 @@ class ShowsDistillationFragment : AppCompatDialogFragment() {
 
     @BindView(R.id.tabLayoutShowsDistillation)
     internal lateinit var tabLayout: SlidingTabLayout
+
     @BindView(R.id.viewPagerShowsDistillation)
     internal lateinit var viewPager: ViewPager
 
@@ -116,6 +117,12 @@ class ShowsDistillationFragment : AppCompatDialogFragment() {
         override fun onMakeAllHiddenVisibleClick() {
             dismiss()
             MakeAllVisibleDialogFragment().safeShow(parentFragmentManager, "makeAllVisibleDialog")
+        }
+
+        override fun onRemoveCurrentlyDisplayedShowsClick() {
+            dismiss()
+            RemoveCurrentlyDisplayedShowsDialogFragment()
+                .safeShow(parentFragmentManager, "removeCurrentlyDisplayedShowsDialog")
         }
 
     }

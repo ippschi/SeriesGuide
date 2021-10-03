@@ -9,6 +9,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.viewModelScope
 import androidx.sqlite.db.SimpleSQLiteQuery
+import com.battlelancer.seriesguide.SgApp
 import com.battlelancer.seriesguide.provider.SeriesGuideContract.SgShow2Columns
 import com.battlelancer.seriesguide.provider.SeriesGuideDatabase.Tables
 import com.battlelancer.seriesguide.provider.SgRoomDatabase
@@ -173,4 +174,10 @@ class ShowsViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun removeCurrentlyDisplayedShows() {
+        showItemsLiveData.value?.let { displayedShows ->
+            val displayedShowIds = displayedShows.map { it.rowId }
+            SgApp.getServicesComponent(getApplication()).showTools().removeShows(displayedShowIds)
+        }
+    }
 }
