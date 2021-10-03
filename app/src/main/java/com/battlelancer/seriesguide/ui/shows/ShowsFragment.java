@@ -129,7 +129,7 @@ public class ShowsFragment extends Fragment {
         }
         recyclerView.setAdapter(adapter);
 
-        model = new ViewModelProvider(this).get(ShowsViewModel.class);
+        model = new ViewModelProvider(requireActivity()).get(ShowsViewModel.class);
         model.getShowItemsLiveData().observe(getViewLifecycleOwner(), showItems -> {
             adapter.submitList(showItems);
             // note: header is added later, but if it is shown should not treat as empty

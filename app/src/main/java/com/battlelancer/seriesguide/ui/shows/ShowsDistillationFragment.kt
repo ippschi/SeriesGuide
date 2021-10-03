@@ -118,6 +118,11 @@ class ShowsDistillationFragment : AppCompatDialogFragment() {
             MakeAllVisibleDialogFragment().safeShow(parentFragmentManager, "makeAllVisibleDialog")
         }
 
+        override fun onRemoveAllVisibleClick() {
+            dismiss()
+            RemoveAllVisibleDialogFragment().safeShow(parentFragmentManager, "removeAllVisibleDialog")
+        }
+
     }
 
     private val sortOrderListener = object : SortShowsView.SortOrderListener {
